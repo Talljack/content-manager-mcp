@@ -1,0 +1,49 @@
+{
+  "name": "content-manager-mcp",
+  "version": "1.0.0",
+  "description": "A TypeScript MCP Server for content management, including markdown processing, document generation, and note searching",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "start": "node dist/index.js",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "content-management",
+    "markdown",
+    "documentation",
+    "notes",
+    "ai"
+  ],
+  "author": "Talljack",
+  "license": "MIT",
+  "packageManager": "pnpm@9.0.0",
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "@typescript-eslint/eslint-plugin": "^8.44.0",
+    "@typescript-eslint/parser": "^8.44.0",
+    "eslint": "^9.35.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.18.0",
+    "gray-matter": "^4.0.3",
+    "marked": "^16.3.0",
+    "yaml": "^2.8.1",
+    "fuse.js": "^7.1.0",
+    "glob": "^11.0.3",
+    "zod": "^4.1.9"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  }
+}
