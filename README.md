@@ -296,6 +296,23 @@ Your markdown content here...
 - **Tag search**: `tags: ["typescript", "documentation"]`
 - **Date search**: `startDate: "2024-01-01", endDate: "2024-12-31"`
 
+## 📤 Publishing
+
+This package is published to NPM as `@yugangcao/content-manager-mcp`. To publish a new version:
+
+```bash
+# Build the project
+pnpm build
+
+# Update version (patch/minor/major)
+npm version patch
+
+# Publish to NPM
+npm publish
+```
+
+For detailed publishing instructions, see [PUBLISH_TO_NPM.md](./PUBLISH_TO_NPM.md).
+
 ## 🤝 Contributing
 
 1. Fork the repository
