@@ -1,9 +1,8 @@
 {
   "mcpServers": {
     "content-manager": {
-      "command": "node",
-      "args": ["./dist/index.js"],
-      "cwd": "/path/to/content-manager-mcp",
+      "command": "npx",
+      "args": ["-y", "content-manager-mcp"],
       "env": {
         "NODE_ENV": "production"
       }

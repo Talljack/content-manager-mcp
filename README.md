@@ -35,10 +35,10 @@ A comprehensive TypeScript-based Model Context Protocol (MCP) server for content
 ### Option 1: NPM Package (Recommended)
 ```bash
 # Install globally
-npm install -g @yugangcao/content-manager-mcp
+npm install -g content-manager-mcp
 
 # Or use directly with npx
-npx -y @yugangcao/content-manager-mcp
+npx -y content-manager-mcp
 ```
 
 ### Option 2: From Source
@@ -71,7 +71,7 @@ The server runs via stdio and implements the MCP protocol:
 content-manager-mcp
 
 # Using npx (no installation required)
-npx -y @yugangcao/content-manager-mcp
+npx -y content-manager-mcp
 ```
 
 #### Using Source Build
@@ -88,7 +88,7 @@ Add to your Claude Desktop configuration:
   "mcpServers": {
     "content-manager": {
       "command": "npx",
-      "args": ["-y", "@yugangcao/content-manager-mcp"]
+      "args": ["-y", "content-manager-mcp"]
     }
   }
 }
@@ -97,7 +97,67 @@ Add to your Claude Desktop configuration:
 #### Cherry Studio
 Configure MCP server:
 - **Command**: `npx`
-- **Arguments**: `["-y", "@yugangcao/content-manager-mcp"]`
+- **Arguments**: `["-y", "content-manager-mcp"]`
+
+#### Codex
+Add to your Codex MCP servers configuration:
+```json
+{
+  "mcpServers": {
+    "content-manager": {
+      "command": "npx",
+      "args": ["-y", "content-manager-mcp"]
+    }
+  }
+}
+```
+
+#### Claude Code
+Add MCP server using Claude Code CLI:
+```bash
+# Add content-manager-mcp server to Claude Code
+claude mcp add content-manager -- npx -y content-manager-mcp
+
+# Or if you prefer to install globally first
+npm install -g content-manager-mcp
+claude mcp add content-manager -- content-manager-mcp
+```
+
+#### VS Code
+Install the MCP extension and configure:
+1. Install the MCP extension from VS Code marketplace
+2. Add to your VS Code settings (`settings.json`):
+```json
+{
+  "mcp.servers": {
+    "content-manager": {
+      "command": "npx",
+      "args": ["-y", "content-manager-mcp"]
+    }
+  }
+}
+```
+
+#### Cursor
+Configure MCP server in Cursor settings:
+1. Open Cursor settings
+2. Navigate to MCP configuration
+3. Add new server:
+   - **Name**: `content-manager`
+   - **Command**: `npx`
+   - **Arguments**: `["-y", "content-manager-mcp"]`
+
+Or add to Cursor's `settings.json`:
+```json
+{
+  "mcp.servers": {
+    "content-manager": {
+      "command": "npx",
+      "args": ["-y", "content-manager-mcp"]
+    }
+  }
+}
+```
 
 ### Available Tools
 
@@ -190,24 +250,6 @@ Read and parse a single content file:
 {
   filePath: string             // Path to file to read
 }
-```
-
-## 🏗 Project Structure
-
-```
-content-manager-mcp/
-├── src/
-│   ├── types/          # Zod schemas and TypeScript types
-│   ├── utils/          # Utility functions for file operations
-│   │   ├── fileUtils.ts      # File system operations
-│   │   ├── markdownUtils.ts  # Markdown processing
-│   │   └── searchUtils.ts    # Search functionality
-│   ├── tools/          # MCP tool definitions and handlers
-│   └── index.ts        # Main server entry point
-├── dist/               # Compiled output
-├── tsup.config.ts      # Build configuration
-├── tsconfig.json       # TypeScript configuration
-└── package.json        # Project metadata and dependencies
 ```
 
 ## 🧪 Development
