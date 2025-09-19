@@ -32,11 +32,21 @@ A comprehensive TypeScript-based Model Context Protocol (MCP) server for content
 
 ## 📦 Installation
 
-### Prerequisites
+### Option 1: NPM Package (Recommended)
+```bash
+# Install globally
+npm install -g @yugangcao/content-manager-mcp
+
+# Or use directly with npx
+npx -y @yugangcao/content-manager-mcp
+```
+
+### Option 2: From Source
+#### Prerequisites
 - Node.js >= 20.0.0
 - pnpm >= 9.0.0
 
-### Setup
+#### Setup
 ```bash
 # Clone and install dependencies
 git clone <repository-url>
@@ -55,9 +65,39 @@ pnpm dev
 ### As MCP Server
 The server runs via stdio and implements the MCP protocol:
 
+#### Using NPM Package
+```bash
+# If installed globally
+content-manager-mcp
+
+# Using npx (no installation required)
+npx -y @yugangcao/content-manager-mcp
+```
+
+#### Using Source Build
 ```bash
 node dist/index.js
 ```
+
+### MCP Client Configuration
+
+#### Claude Desktop
+Add to your Claude Desktop configuration:
+```json
+{
+  "mcpServers": {
+    "content-manager": {
+      "command": "npx",
+      "args": ["-y", "@yugangcao/content-manager-mcp"]
+    }
+  }
+}
+```
+
+#### Cherry Studio
+Configure MCP server:
+- **Command**: `npx`
+- **Arguments**: `["-y", "@yugangcao/content-manager-mcp"]`
 
 ### Available Tools
 
@@ -213,6 +253,23 @@ Your markdown content here...
 - **Exact search**: `query: "exact phrase", fuzzy: false`
 - **Tag search**: `tags: ["typescript", "documentation"]`
 - **Date search**: `startDate: "2024-01-01", endDate: "2024-12-31"`
+
+## 📤 Publishing
+
+This package is published to NPM as `@yugangcao/content-manager-mcp`. To publish a new version:
+
+```bash
+# Build the project
+pnpm build
+
+# Update version (patch/minor/major)
+npm version patch
+
+# Publish to NPM
+npm publish
+```
+
+For detailed publishing instructions, see [PUBLISH_TO_NPM.md](./PUBLISH_TO_NPM.md).
 
 ## 🤝 Contributing
 
