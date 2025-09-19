@@ -1,8 +1,11 @@
 {
   "name": "content-manager-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A TypeScript MCP Server for content management, including markdown processing, document generation, and note searching",
   "main": "dist/index.js",
+  "bin": {
+    "content-manager-mcp": "dist/index.js"
+  },
   "type": "module",
   "scripts": {
     "build": "tsup",
@@ -45,5 +48,12 @@
   "engines": {
     "node": ">=20.0.0",
     "pnpm": ">=9.0.0"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
   }
 }
